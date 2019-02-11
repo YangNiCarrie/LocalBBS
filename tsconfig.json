@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./public/Dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react",
+        "experimentalDecorators": true
+    },
+    "include": [
+        "./ClientApp/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

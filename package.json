@@ -1,0 +1,47 @@
+{
+  "name": "runerrand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack-dev-server --hot --inline",
+    "build-server": "ts-node ./Server/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/webpack-env": "^1.13.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "mobx": "^5.8.0",
+    "mobx-react": "^5.4.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.5.3",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.1",
+    "antd": "^3.13.2"
+  }
+}

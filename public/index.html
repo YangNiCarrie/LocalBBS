@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>TypeScript React test page</title>
+        <link rel="stylesheet" type="text/css" href="dist/styles.css" />
+    </head>
+    <body>
+        <div id="test"></div>
+        <!-- <script src="test.js"></script> -->
+        <script type="text/javascript" src="dist/bundle.js"></script>
+        <script>
+            function test()
+            {
+                alert(1)
+            }
+        </script>
+        <button onclick="test()">btn</button>
+        <div id="grid">
+            <div class="gridItem">1</div>
+            <div class="gridItem">2</div>
+            <div class="gridItem">3</div>
+            <div class="gridItem">4</div>
+            <div class="gridItem">5</div>
+        </div>
+        <style>
+            #grid
+            {
+                display: grid;
+                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+                grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+                background-color: green;
+                height: 200px;
+                width: 200px;
+            }
+
+            .gridItem
+            {
+                background-color: pink;
+                grid-row: 2 / 5;
+                grid-column: 4 /4;
+            }
+        </style>
+
+        <script>
+            console.log(this);
+            function test111()
+            {
+                console.log(this);
+                return function test222()
+                {
+                    console.log(this);
+                }
+                
+            }
+            test111()();
+        </script>
+        
+        <script>
+            var o = document.createElement('div');
+            o.style.height='200px';
+            o.style.width='200px';
+            o.style.backgroundColor='black';
+            document.body.appendChild(o);
+
+            var promise = new Promise(function(resolve, reject)
+            {
+                setTimeout(() => {
+                    resolve('blue');
+                }, 3000);
+            });
+
+            promise.then((a) =>
+                {o.style.backgroundColor=a;}
+            );
+
+        </script>
+
+        <script>
+            var vvv = [1,6,4,2,7,5];
+
+            function mergeSort(a)
+            {
+                var len = a.length;
+                if(len<2)
+                {
+                    return a;
+                }
+                var mid = Math.floor(len/2),
+                left = a.slice(0, mid),
+                right = a.slice(mid);
+                return m(mergeSort(left), mergeSort(right));
+            }
+            function m(left, right)
+            {
+                var result = [];
+                var indexLeft = 0, indexRight = 0;
+                while(indexLeft < left.length && indexRight < right.length)
+                {
+                    if(left[indexLeft] < right[indexRight])
+                    {
+                        result.push(left[indexLeft]);
+                        indexLeft++;
+                    }
+                    else
+                    {
+                        result.push(right[indexRight]);
+                        indexRight++;
+                    }
+                }
+                
+                return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
+            }
+
+            console.log(mergeSort(vvv));
+
+            function a(){console.log('a')};
+            // b = new a();
+
+            function aChild()
+            {
+                a.call(this);
+            }
+            aChild.prototype.constructor = aChild;
+        </script>
+        
+    </body>
+</html>
