@@ -15,7 +15,7 @@
                 alert(1)
             }
         </script>
-        <button onclick="test()">btn</button>
+        <!-- <button onclick="test()">btn</button>
         <div id="grid">
             <div class="gridItem">1</div>
             <div class="gridItem">2</div>
@@ -40,7 +40,7 @@
                 grid-row: 2 / 5;
                 grid-column: 4 /4;
             }
-        </style>
+        </style> -->
 
         <script>
             console.log(this);
@@ -56,7 +56,7 @@
             test111()();
         </script>
         
-        <script>
+        <!-- <script>
             var o = document.createElement('div');
             o.style.height='200px';
             o.style.width='200px';
@@ -74,7 +74,7 @@
                 {o.style.backgroundColor=a;}
             );
 
-        </script>
+        </script> -->
 
         <script>
             var vvv = [1,6,4,2,7,5];
@@ -124,5 +124,503 @@
             aChild.prototype.constructor = aChild;
         </script>
         
+
+        <div class="rating">
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span> 
+        </div>
+
+        <script>
+            var starClicked = document.getElementsByClassName('star');
+            for(var i = 0; i < starClicked.length; i++)
+            {
+                starClicked[i].onmouseover = selected;
+            }
+            var index;
+            function selected()
+            {
+                for(var i = 0; i < starClicked.length; i++)
+                {
+                    if(starClicked[i] == this)
+                    {
+                        index=i;
+                    }
+                }
+                for(var i = 0; i <= index; i++)
+                {
+                    starClicked[i].style.color = "red";
+                }
+                for(var i = index+1; i < starClicked.length; i++)
+                {
+                    starClicked[i].style.color = "blue";
+                }
+            }
+        </script>
+
+        <script>
+            var str = "Bob hit a ball, the hit BALL flew far after it was hit.";
+            console.log(str.split(' '));
+            
+        </script>
+
+        <script>
+            let str1 = 'asdfghjklaqwertyuiopiaia';
+            const strChar = (str) =>
+            {
+                let string = [ ...str ],
+                    maxValue = '',
+                    max = 0,
+                    obj = {};
+
+                obj.forEach((value) =>
+                {
+                    obj[value] = obj[value] == undefined ? 1 : obj[value]+1;
+                    if(max<obj[value])
+                    {
+                        max = obj[value];
+                        maxValue = value;
+                    }
+                });
+                return maxValue;
+            }
+
+
+            let arr11 = ['1', '2', '3', '1', 'a', 'b', 'b']
+            const removeDup = function(a)
+            {
+                let obj = {};
+                a.forEach((ele) => 
+                {
+                    obj[value] = 0;
+                });
+                return Object.keys(obj);
+            }
+            console.log(arr11.join(''));
+
+
+            var sum = 0; var max = 0;
+            var maxSubarr = function(grid)
+            {
+                var len = grid.length;
+                for(var i = len; i > 1; i--)
+                {
+                    for(var j = 0; j < i; j++)
+                    {
+                        sum = grid[j][j];
+                    }
+                }
+            }
+            
+        </script>
+
+        <!-- <div id="buttons">
+            <button>the button has been clicked 0 times</button>
+        </div>
+        <script>
+            function clicked(e)
+            {
+                var curBtn = e.target;
+                var t = curBtn.innerHTML.split(' ');
+                var after = parseInt(t[5])+1;
+                t[5] = after;
+                curBtn.innerHTML = t.join(' ');
+                var newbtn = document.createElement('button');
+                newbtn.innerHTML = "the button has been clicked 0 times";
+                e.currentTarget.appendChild(newbtn);
+            }
+            document.getElementById('buttons').addEventListener("click", clicked);
+            </script> -->
+
+        <div class="card">
+            <div class="front">this is card one</div>
+            <div class="back">this is card one back</div>
+        </div>
+        <div class="card">
+            <div class="front">this is card one</div>
+            <div class="back">this is card one back</div>
+        </div>
+        <div class="card">
+            <div class="front">this is card one</div>
+            <div class="back">this is card one back</div>
+        </div>
+        <div class="card">
+            <div class="front">this is card one</div>
+            <div class="back">this is card one back</div>
+        </div>
+        <div class="card">
+            <div class="front">this is card one</div>
+            <div class="back">this is card one back</div>
+        </div>
+
+        <script>
+            
+            var cards = document.getElementsByClassName('card');
+
+            for(let i = 0; i < cards.length; i++)
+            {
+                let f = document.getElementsByClassName('front')[i];
+                let b = document.getElementsByClassName('back')[i];
+
+                b.style.display="none";
+                f.style.display="block";
+                cards[i].addEventListener('click', function()
+                {
+                    let temp = f.style.display;
+                    f.style.display = b.style.display;
+                    b.style.display = temp;
+                });
+            }
+        </script>
+
+        <!-- <div id="buttons">
+            <button>this button has been clicked 0 times</button>
+        </div>
+
+        <script>
+            document.getElementById('buttons').addEventListener('click', clickt);
+
+            function clickt(e)
+            {
+                var curbtn = e.target;
+                var t = e.target.innerHTML.split(' ');
+                var aftert = parseInt(t[5])+1;
+                t[5] = aftert;
+                curbtn.innerHTML = t.join(' ');
+
+                var nbtn = document.createElement('button');
+                nbtn.innerHTML="this button has been clicked 0 times";
+                e.currentTarget.appendChild(nbtn);
+            }
+
+            
+        </script> -->
+
+        <script>
+            var ia = [1,1,1,2,2,3,3,4,4,4,5,5,6];
+            var countodd = function ()
+            {
+                var count = 0;
+                var result = [];
+                for(var i = 0; i < ia.length; i++)
+                {
+                    for(var j = 0; j < ia.length; j++)
+                    {
+                        if (ia[i] === ia[j])
+                        {
+                            count ++;
+                        }
+                    }
+                    if(count % 2 === 1)
+                    {
+                        result.push(ia[i]);
+                    }
+                }
+                return result;
+            }
+            var countoddmap = function(a)
+            {
+                var map = {};
+                for(let i = 0; i < a.length; i++)
+                {
+                    const item = map[a[i]];
+                    if(item !== undefined)
+                    {
+                        map[num] = item+1;
+                    }
+                    else
+                    {
+                        map[num] = 1;
+                    }
+                }
+                for(const [num, item] of map)
+                {
+                    if(item % 2 === 1)
+                    {
+                        return nums;
+                    }
+                }
+            }
+
+            var userName = 'abcdef';
+            var password = '123abc4';
+            var strPass = password.match(/[a-z|A-Z]/ig).join('');
+            var len = Math.floor(userName.length/2);
+            var firstHalf = userName.slice(0, len);
+            var secondHalf = userName.slice(len, userName.length);
+
+            var vali = function(strPass){
+                if(strPass !== firstHalf && strPass !== secondHalf)
+                {
+                    return true;
+                }
+                    else return false;
+            }
+            console.log(vali(password.match(/[a-z|A-Z]/ig).join('')));
+
+
+
+            var rag = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\~&])");
+
+            console.log(rag.test(password));
+
+
+
+            
+            // var mapArr = function(a)
+            // {
+            //     var mapProduct = {};
+            //     var maxClick = 0;
+            //     for(var i = 0; i < a.length; i++)
+            //     {
+            //         if(mapProduct[a[i].catg] !== undefined)
+            //         {
+            //             mapProduct[a[i].catg].push(a[i]);
+            //         }
+            //         else
+            //         {
+            //             mapProduct[a[i].catg] = [a[i]];
+            //         }
+            //     }
+            //     console.log(mapProduct);
+            //     var result={};
+            //     for(let key of Object.keys(mapProduct))
+            //     {
+            //         var maxClick = 0;
+            //         var clickmost;
+            //         for (var i = 0; i < mapProduct[key].length; i++)
+            //         {
+            //             if(maxClick < mapProduct[key][i].clickTimes)
+            //             {
+            //                 clickmost = mapProduct[key][i];
+            //                 maxClick = mapProduct[key][i].clickTimes;
+            //             }
+            //         }
+            //         result[key] = clickmost;
+            //     }
+            //     console.log(result);
+            // }(products);
+
+            
+        </script>
+
+
+        <table>
+            <thead>
+                    <th>
+                            <td class="th"></td>
+                        </th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <style>
+            .th
+            {
+                border: 1px solid black;
+                width: 200px;
+                height: 30px;
+                position: relative;
+            }
+        </style>
+
+        <script>
+            var th = document.getElementsByClassName('th')[0];
+            var w = 200;
+
+            th.onmousedown = function(ev)
+            {
+                var curX = ev.clientX;
+                // console.log(curX);
+                th.onmousemove = function(e)
+                {
+                    console.log(e.clientX - curX);
+                    w += e.clientX - curX;
+                    th.style.width = w + 'px';
+                    // curX =e.clientX;
+                }
+                
+                th.onmouseup = function()
+                {
+                    th.onmousemove = undefined;
+                }
+            }
+            
+            // th.addEventListener('onmousemove', onmove);
+            // th.addEventListener('onmouseup', onup);
+
+            var ondown = function(ev)
+            {
+                console.log(ev.clientX);
+            }
+
+            var Product = function(id, clickTimes, catg, amount)
+            {
+                this.id = id;
+                this.clickTimes = clickTimes;
+                this.catg = catg;
+                this.amount = amount;
+            }
+
+            var product1 = new Product(2,5,"asd",10);
+            var product2 = new Product(2,3,'aex',100);
+            var product3 = new Product(4,90,"wed",80);
+            var product4 = new Product(4,95,"wed",70);
+
+            var products = [product1, product2, product3, product4];
+
+            var pm = function(a)
+            {
+                var mapProduct = {};
+                for(var i = 0; i < a.length; i++)
+                {
+                    if(mapProduct[a[i].catg] !== undefined)
+                    {
+                        mapProduct[a[i].catg].push(a[i]);
+                    }
+                    else
+                    {
+                        mapProduct[a[i].catg] = [a[i]];
+                    }
+                }
+
+                var maxClick = 0;
+                for(let key of Object.keys(mapProduct))
+                {
+                    mapProduct[key].sort((a,b) => b.clickTimes-a.clickTimes);
+                } console.log(mapProduct);
+            }(products);
+        </script>
+
+
+        <script>
+            var Car = function(speed, color, brand)
+            {
+                this.speed = speed;
+                this.color = color;
+                this.brand = brand;
+            }
+            Car.prototype.speedup = function()
+            {
+                this.speed++;
+            }
+            Car.prototype.speeddown = function()
+            {
+                this.speed--;
+            }
+            var newCar = new Car(1,'','');
+        </script>
+
+        <script>
+            var test1111 = ['ax', 'bc', 'a'];
+
+            console.log(
+                test1111.filter((a) => a.indexOf('a') === -1));
+        </script>
+
+        <div id="buttons">
+            <button>this button has been clicked 0 times</button>
+        </div>
+        <script>
+            function click(e)
+            {
+                var currentbtn = e.target;
+                var textcur = e.target.innerHTML.split(' ');
+                var afterclick = parseInt(textcur[5])+1;
+                textcur[5] = afterclick;
+                currentbtn.innerHTML = textcur.join(' ');
+                var newbtn = document.createElement('button');
+                newbtn.innerHTML = "this button has been clicked 0 times";
+                e.currentTarget.appendChild(newbtn);
+            }
+            document.getElementById('buttons').addEventListener('click', click);
+        </script>
+        <script>
+            var testnum = [1,4,3,2,6,7,8,3];
+
+            var map = {};
+
+            var rn = function(a)
+            {
+                for(var i = 0; i < a.length; i++)
+                {
+                    if(map[a[i]]!==undefined)
+                    {
+                        map[a[i]]+=1;
+                    }
+                    else
+                    {
+                        map[a[i]] = 1;
+                    }
+                }
+                for(var key of Object.keys(map))
+                {
+                    if(map[key] === 2) return key;
+                }
+            }
+            console.log(rn(testnum));
+        </script>
+
+        <table id="table">
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td>phone</td>
+                    <td>address</td>
+                    <td><button id="add">+</button></td>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>John</td>
+                    <td>123</td>
+                    <td>nth st</td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td>Sam</td>
+                    <td>134</td>
+                    <td>mth st</td>
+                    <td><button>-</button></td>
+                </tr>
+            </tbody>
+            <script>
+                var curtbody = document.getElementById('tbody');
+                var addrow = document.getElementById('add');
+
+                function addclick()
+                {
+                    var newrow = document.createElement('tr');
+                    var newtdname = document.createElement('td');
+                    newtdname.innerHTML="Amy";
+                    var newtdphone = document.createElement('td');
+                    newtdphone.innerHTML="146";
+                    var newtdaddress = document.createElement('td');
+                    newtdaddress.innerHTML = "wdfg";
+                    var deletebtn = document.createElement('button');
+                    deletebtn.innerHTML = "-";
+                    newrow.appendChild(newtdname);
+                    newrow.appendChild(newtdphone);
+                    newrow.appendChild(newtdaddress);
+                    newrow.appendChild(deletebtn);
+                    curtbody.appendChild(newrow);
+                }
+                addrow.addEventListener('click', addclick);
+
+                function deleteclick(e)
+                {
+                    var curdelete = e.target.parentElement.parentElement;
+                    document.getElementById('tbody').removeChild(curdelete);
+                    console.log(e.target);
+                }
+                
+                curtbody.addEventListener('click', deleteclick);
+            </script>
+        </table>
+
     </body>
 </html>
